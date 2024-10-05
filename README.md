@@ -57,11 +57,13 @@ Once the bot is running, you can start interacting with it through Telegram:
 ### Project Structure
 
     ```bash
-   NodeJsTelegramIdFinderBot/
-    │
-    ├── index.js          # Main bot logic
-    ├── package.json    # Project metadata and dependencies
-    └── .env            # Environment variables (keep this secret)
+    
+    NodeJsTelegramIdFinderBot/
+     │
+     ├── index.js          # Main bot logic
+     ├── package.json    # Project metadata and dependencies
+     └── .env            # Environment variables (keep this secret)
+    
     ```
 
 ### Scripts
