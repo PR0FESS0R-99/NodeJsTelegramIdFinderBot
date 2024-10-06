@@ -20,7 +20,7 @@ class NodeTeleBotAPI {
                 path: options.webhook?.path || "/",
                 tlsOptions: options.webhook?.tlsOptions,
                 cb: options.webhook?.cb || function () { },
-                port: 8443
+                port: 4000
             }
         };
 
