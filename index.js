@@ -4,7 +4,11 @@ const { userMention } = require("node-tele-bot-api/methods");
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
-const bot = new NodeTeleBotAPI(BOT_TOKEN);
+const bot = new NodeTeleBotAPI(BOT_TOKEN, {
+    webhook:{
+        domain: process.env.DOMAIN
+    }
+});
 
 bot.onCommand("start", async (messgae) => {
     
