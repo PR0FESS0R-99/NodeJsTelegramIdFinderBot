@@ -1,6 +1,6 @@
 require("dotenv").config();
-const { NodeTeleBotAPI } = require("node-tele-bot-api");
-const { userMention } = require("node-tele-bot-api/methods");
+const { NodeTeleBotAPI } = require("./src/telegram");
+const { userMention } = require("./src/methods");
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
