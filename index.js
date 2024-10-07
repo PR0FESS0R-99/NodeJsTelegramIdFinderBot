@@ -23,5 +23,6 @@ bot.start(() => {
 });
 
 bot.setWebhookConfig({
-    domain: process.env.DOMAIN
+    domain: process.env.DOMAIN,
+    port: process.env.PORT
 });
