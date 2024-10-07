@@ -6,6 +6,9 @@ const BOT_TOKEN = process.env.BOT_TOKEN;
 
 const bot = new NodeTeleBotAPI(BOT_TOKEN, {
     webhook:{
+        cb: () => {
+            console.log("test")
+        },
         domain: process.env.DOMAIN
     }
 });
