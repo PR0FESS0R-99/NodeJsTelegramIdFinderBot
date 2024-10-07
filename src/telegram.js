@@ -38,24 +38,19 @@ class NodeTeleBotAPI {
                     this.#handleLoop();
                     callback && callback(botInto);
                 }).then(() => console.log('Bot started with long-polling'));
+
+                return;
             };
 
-            if (typeof this.options.webhook.domain !== 'string' && typeof this.options.webhook.path !== 'string') {
-                throw new Error('Webhook domain or webhook path is required')
-            };
-
-            let domain = this.options.webhook.domain || ''
+            let domain = process.env.DOMAIN
             if (domain.startsWith('https://') || domain.startsWith('http://')) {
                 domain = new URL(domain).host
             };
 
-            const hookPath = this.options.webhook.path || `/nodeTelebotApi/${crypto.randomBytes(32).toString('hex')}`
-            const { port, host, tlsOptions, cb } = this.options.webhook
-            this.startWebhook(hookPath, tlsOptions, port, host, cb)
-            if (!domain) {
-                console.log('Bot started with webhook')
-                return
-            };
+            const hookPath = this.webhook.path || `/nodeTelebotApi/${crypto.randomBytes(32).toString('hex')}`;
+
+            this.startWebhook(hookPath, this.webhook.port);
+
 
             return this.setWebhook(`https://${domain}${hookPath}`)
                 .then(() => console.log(`Bot started with webhook @ https://${domain}`))
