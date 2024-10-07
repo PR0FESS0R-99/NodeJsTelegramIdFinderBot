@@ -12,6 +12,6 @@
   "dependencies": {
     "crypto": "^1.0.1",
     "dotenv": "^16.4.5",
-    "node-tele-bot-api": "^0.0.8"
+    "node-tele-bot-api": "^0.0.9"
   }
 }
